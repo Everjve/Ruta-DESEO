@@ -1,0 +1,6 @@
+/*  Netlify SPA fallback — all paths serve index.html  */
+/* :splat match */
+/*   → index.html  200  */
+/blog/*  /index.html  200
+/bitacora-21  /index.html  200
+/*  /index.html  200
