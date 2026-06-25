@@ -65,7 +65,7 @@ Deno.serve(async (req: Request) => {
     }
 
     const emailPayload: Record<string, unknown> = {
-      from: "Ever Vega · Ruta DESEO <ever@rutadeseo.com>",
+      from: "Ever Vega · Ruta DESEO <contacto@evervega.com>",
       to: [email],
       subject: `Tu guía de la etapa ${stageName} - Ruta DESEO`,
       html: `
