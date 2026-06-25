@@ -50,7 +50,7 @@ Deno.serve(async (req: Request) => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Ever Vega · Ruta DESEO <ever@rutadeseo.com>",
+        from: "Ever Vega · Ruta DESEO <contacto@evervega.com>",
         to: [email],
         subject: "Estás en la lista de espera de DESEO 90",
         html: `
