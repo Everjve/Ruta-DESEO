@@ -10,6 +10,10 @@ import {
 
 type TestPhase = 'intro' | 'questions' | 'result' | 'email' | 'done';
 
+// ⚠️ CONFIGURACIÓN FIJA DE SUPABASE (sin variables de entorno)
+const SUPABASE_URL = 'https://pvukdwehbhm1ukbjxzkh.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB2dWtkd2VoYmhtbHVrYmp4emtoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyNTQyMDMsImV4cCI6MjA5NzgzMDIwM30.iak3rKmngxg6GjpBQDN234PBlhvrtw7YZ67316M6g4M';
+
 export default function TestDeseo() {
   const [phase, setPhase] = useState<TestPhase>('intro');
   const [current, setCurrent] = useState(0);
@@ -68,13 +72,14 @@ export default function TestDeseo() {
     setSubmitting(true);
 
     try {
+      // 🔥 AHORA USA LA URL Y CLAVE FIJA
       const res = await fetch(
-        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-test-pdf`,
+        `${SUPABASE_URL}/functions/v1/send-test-pdf`,
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+            Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
           },
           body: JSON.stringify({
             name,
